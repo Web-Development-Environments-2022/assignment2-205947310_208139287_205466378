@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./main.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> -->
+    <script src="jQuery.js"></script>
+    <style> head{color: white;
+        text-align: center;
+        text-shadow: 2px 2px #36aace;
+        font-size: 18px;
+        font-weight: 900;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}</style>
+</head>
+<body>
+
+
+    <button class="about" id="aboutBtm" type="click">About</button>
+
+    <div  class="modal" id="about" >
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Pacman Game</h1>
+            <center>
+            <p>Authors: Mazal Mahari & Raz Ego & Tair Salman</p>
+            <p>We used jQuery Validator to confirm login and register inputs</p>
+                <br>
+            <p>Our difficulties:</p>			
+            <p>1. The player movement and the ghosts movement were hard parts to implement.</p>
+            <p>2. Merging all part together to one working unit</p>
+            </center>
+        </div>
+    </div>	
+
+    <div class="container">
+
+        <img class="imgLogo" src="img/logo1.png">
+
+        <form class="form" id="welcome">
+            <h1 class="form__title">Welcome</h1>
+            <button class="form__button form__button_welcome" id="submitlogin" type="click">Sign in</button>
+            <button class="form__button form__button_welcome" id="submitRegister" type="click">Register</button>
+        </form>
+
+
+        <form class="form form--hidden" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="Username" autofocus placeholder="username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input form__input-error" id="Password" autofocus placeholder="password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" id="buttonLogin" type="click">Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account yet? Create now</a>
+            </p>
+        </form>
+        
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <label id="contMsg">The continue button will show after all the fields be validate</label>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="username" autofocus placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="fullname" autofocus placeholder="Full name">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="email" autofocus placeholder="Email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="pass" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <label font="sans-serif">Bitrhday : </label>
+                <select id="selectBday" name="ChooseDay" type="number">							
+                    <option >1</option>
+                    <option >2</option>
+                    <option >3</option>
+                    <option >4</option>
+                    <option >5</option>
+                    <option >6</option>
+                    <option >7</option>
+                    <option >8</option>
+                    <option >9</option>
+                    <option >10</option>
+                    <option >11</option>
+                    <option >12</option>
+                    <option >13</option>
+                    <option >14</option>
+                    <option >15</option>
+                    <option >16</option>
+                    <option >17</option>
+                    <option >18</option>
+                    <option >19</option>
+                    <option >20</option>
+                    <option >21</option>
+                    <option >22</option>
+                    <option >23</option>
+                    <option >24</option>
+                    <option >25</option>
+                    <option >26</option>
+                    <option >27</option>
+                    <option >28</option>
+                    <option >29</option>
+                    <option >30</option>
+                    <option >31</option>						
+                </select>
+                <select id="selectBMont" name="ChooseMonth" type="number">							
+                    <option >1</option>
+                    <option >2</option>
+                    <option >3</option>
+                    <option >4</option>
+                    <option >5</option>
+                    <option >6</option>
+                    <option >7</option>
+                    <option >8</option>
+                    <option >9</option>
+                    <option >10</option>
+                    <option >11</option>
+                    <option >12</option>
+                </select>
+                <select id="selectBYear" name="ChooseYear" type="number">							
+                    <option >1970</option>
+                    <option >1971</option>
+                    <option >1972</option>
+                    <option >1973</option>
+                    <option >1974</option>
+                    <option >1975</option>
+                    <option >1976</option>
+                    <option >1977</option>
+                    <option >1978</option>
+                    <option >1979</option>
+                    <option >1980</option>
+                    <option >1981</option>
+                    <option >1982</option>
+                    <option >1983</option>
+                    <option >1984</option>
+                    <option >1985</option>
+                    <option >1986</option>
+                    <option >1987</option>
+                    <option >1988</option>
+                    <option >1989</option>
+                    <option >1990</option>
+                    <option >1991</option>
+                    <option >1992</option>
+                    <option >1993</option>
+                    <option >1994</option>
+                    <option >1995</option>
+                    <option >1996</option>
+                    <option >1997</option>
+                    <option >1998</option>
+                    <option >1990</option>
+                    <option >2000</option>	
+                    <option >2001</option>
+                    <option >2002</option>
+                    <option >2003</option>
+                    <option >2004</option>
+                    <option >2005</option>
+                    <option >2006</option>
+                    <option >2007</option>
+                    <option >2008</option>
+                    <option >2009</option>
+                    <option >2010</option>
+                    <option >2011</option>
+                    <option >2012</option>
+                    <option >2013</option>
+                    <option >2014</option>
+                    <option >2015</option>
+                    <option >2016</option>
+                    <option >2017</option>
+                    <option >2018</option>
+                    <option >2020</option>
+                    <option >2021</option>						
+                    <option >2022</option>
+                </select>
+            </div>
+            <button class="form__button" id="btn" type="click" hidden=true>Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
+
+        <form class="form form--hidden" id="settingsForm" name="settingsForm" autocomplete="off">
+            <h1 class="form__title">Settings</h1>
+            <div class="user-box">
+                <label>Key Up</label>
+                <input id="up" name="up" type="text"  required="">
+
+                
+            </div>
+            <div class="user-box">
+                <label>Key Down</label>
+                <input id="down" name="down" type="text"  required="">
+            </div>
+            <div class="user-box">
+                <label>Key Left</label>
+                <input id="left" name="left" type="text"  required="">
+            </div>
+            <div class="user-box">
+                <label>Key Right</label>
+                <input id="right" name="right" type="text"  required="">
+                
+            </div>
+            <script>
+                    function myFunction() {
+                      document.getElementById("up").defaultValue = "ArrowUp";
+                      document.getElementById("down").defaultValue = "ArrowDown";
+                      document.getElementById("right").defaultValue = "ArrowRight";
+                      document.getElementById("left").defaultValue = "ArrowLeft";
+
+                      
+                    }
+                    myFunction();
+                    </script>
+    
+            <div class="user-box">
+                <label>Five Points Ball color</label>
+                <input id="fivePoints" name="fivePoints" type="color" value="#32a852" class="bigball">
+                
+            </div>
+            <div class="user-box">
+                <label>Fifteen Points Ball color</label>
+                <input id="fifteenPoints" name="fifteenPoints" type="color" value = "#ff0000" class="mediumball">
+                
+            </div>
+            <div class="user-box">
+                <label>Twenty Five Points Ball color</label>
+                <input id="twentyFivePoints" name="twentyFivePoints" type="color" value="#3251a8" class="smallball">
+                
+            </div>	
+            
+            <div class="user-box">
+                <label>Number of balls in the game (between 50 to 90)</label>
+                <input id="numOfBalls" name="numOfBalls" type="number" value = "70" min="50" max="90" name="numOfBalls" required="">
+                
+            </div>		
+                            
+            <div class="user-box">
+                <label>Time (Min 60 Seconds)</label>
+                <input id="timerVal" name="timerVal" type="number" value = "60" min="60" name="" required="">
+                
+            </div>
+            <div class="user-box">
+                <label for="Ghosts">Number Of Ghosts</label>
+                    <select id="Ghosts" name="Choose" type="number">
+                        <option >1</option>
+                        <option selected="selected">2</option>
+                        <option >3</option>
+                        <option >4</option>
+                    </select>
+            </div><br>
+            
+
+           <!-- /////////////////// CHANGED ////////////////// -->
+
+            
+            <button id="startGame" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Start
+            </button>
+
+
+           <!-- /////////////////// CHANGED ////////////////// -->
+       
+            <script>
+                $(document).ready(function(){
+                  $('#startGame').click(function(){
+                     startGame(false);
+                  });
+                });
+            </script>
+
+            <script>
+                $(document).ready(function(){
+                  $('#randomGame').click(function(){
+                     startGame(true);
+                  });
+                });
+            </script>
+            <button id="randomGame"  type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Random
+            </button>
+        </form>
+        
+        <form class="form form--hidden" id="GameForm">
+            <button class="form__button" id="btnLogin" type="submit">Reset Game</button>
+            <h1 class="form__title">Game</h1>
+            <p class="GameInfoForm" id="GameInfoForm" style="color: white; font-family: sans-serif;">
+                <span>Player Name: <span id="playerName"></span></span>
+            </p>
+            <p style="color: white; font-family: sans-serif;">
+                <span>Time: <span id="timeEL">0</span>    
+                </span>
+            </p>
+            <p style="color: white; font-family: sans-serif;">
+                <span>Score: <span id="scoreEL">0</span>    
+                </span>
+            </p>
+            <p style="color: white; font-family: sans-serif;">
+                <span>Health: <span id="healthEL">0</span>    
+                </span>
+            </p>
+            <canvas id="canvas" height="600" width="600"></canvas>
+            <script>
+                var audioPlaying=false
+                var restart=false
+                var scoreEL = document.getElementById('scoreEL')
+                var timeEL = document.getElementById('timeEL')
+            </script>
+            <!-- ////////////////////////////////////////////////////////////////////////// -->
+            <button class="form__button form__button_welcome" id="goToSettings" type="submit">
+                Create new game
+            </button>
+  
+                <script>
+                    $(document).ready(function(){
+                      $('#goToSettings').click(function(){
+                        e.preventDefault();
+                        gameForm.classList.add("form--hidden");
+                        settingForm.classList.remove("form--hidden");
+                        restart=false;
+                      });
+                    });
+                </script>
+            <!-- ///////////////////////////////////////////////////////////////////////////// -->
+            <script type="text/javascript">
+                //const scoreEL = document.getElementById('scoreEL')
+                var c = canvas.getContext("2d");
+    
+                class Boundary{
+                    static height = 40
+                    static width = 40
+                    constructor({ position, image }) {
+                        this.position = position
+                        this.width = 40
+                        this.height = 40
+                        this.image = image
+                    }
+        
+                        draw() {
+                            //c.fillStyle = "blue"
+                            //c.fillRect(this.position.x, this.position.y, this.width, this.height)
+                            c.drawImage(this.image, this.position.x, this.position.y)
+                        }
+                }
+        
+                class Player{
+                    constructor({ position, velocity }) {
+                        this.position = position
+                        this.velocity = velocity
+                        this.radius = 15
+                        this.speed = 1.5
+                        this.radians = 0.75
+                        this.openRate = 0.04
+                        this.rotation = 0
+                    }
+        
+                    draw() {
+                        c.save()
+                        c.translate(this.position.x, this.position.y)
+                        c.rotate(this.rotation)
+                        c.translate(-this.position.x, -this.position.y)
+    
+                        c.beginPath()
+                        c.arc(this.position.x, this.position.y, this.radius, this.radians, Math.PI*2 - this.radians)
+                        c.lineTo(this.position.x, this.position.y)
+                        c.fillStyle = 'yellow'
+                        c.fill()
+                        c.closePath()
+                        c.restore()
+                    }
+        
+                    update(){
+                        this.draw()
+                        this.position.x += this.velocity.x
+                        this.position.y += this.velocity.y
+    
+                        if(this.radians < 0 || this.radians > 0.75) this.openRate = -this.openRate
+    
+                        this.radians += this.openRate
+                    }
+                }
+        
+                class Pellet{
+                    constructor({ position, radius = 3, color = 'white', score = 5}) {
+                        this.position = position
+                        this.radius = radius
+                        this.color = color
+                        this.score = score
+                        //this.image=image
+                    }
+    
+                    draw() {
+                        c.beginPath()
+                        c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI*2)
+                        c.fillStyle = this.color
+                        c.fill()
+                        c.closePath()
+                        //c.drawImage(this.image, this.position.x - Boundary.width/2, this.position.y- Boundary.height/2)
+                    }
+    
+                }
+        
+                class PowerUp{
+                    constructor({ position, radius = 5, color = 'yellow', score = 5, image = NaN, type='time' }) {
+                        this.position = position
+                        this.radius = radius
+                        this.color = color
+                        this.score = score
+                        this.image = image
+                        this.type = type
+                    }
+    
+                    draw() {
+                        c.beginPath()
+                        c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI*2)
+                        c.fillStyle = this.color
+                        c.fill()
+                        c.closePath()
+                        
+                        c.drawImage(this.image, this.position.x - Boundary.width/2, this.position.y- Boundary.height/2)
+                    }
+    
+                }
+        
+                class Ghost{
+                    static speed = 1
+                    constructor({ position, velocity, color='red', friend = false, radius=15 }) {
+                        this.position = position
+                        this.velocity = velocity
+                        this.radius = radius
+                        this.color = color
+                        this.prevCollisions = []
+                        this.speed = 1
+                        this.friend = friend
+                    }
+    
+                    draw() {
+                        c.beginPath()
+                        c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI*2)
+                        c.fillStyle = this.color
+                        c.fill()
+                        c.closePath()
+                    }
+    
+                    update(){
+                        this.draw()
+                        this.position.x += this.velocity.x
+                        this.position.y += this.velocity.y
+                    }
+                }
+
+                function startGame(random=false) {
+                    
+                
+                if(random==false){
+                    
+                    monstersAmount = $("#Ghosts").val(); //settings 1 - 4
+                    pelletsAmount = $("#numOfBalls").val(); //settings 50 - 90
+                    var timeLeft = $("#timerVal").val(); //settings 60+ seconds
+                    up = $("#up").val();
+                    down = $("#down").val();
+                    right = $("#right").val();
+                    left  = $("#left").val();
+                    colorBall5 = $("#fivePoints").val();
+                    colorBall10 = $("#fifteenPoints").val(); //?????????????????????????????????????????????????????????????????
+                    colorBall25 = $("#twentyFivePoints").val();
+                    playerName.innerHTML= $("#Username").val();
+                    if(timeLeft < 60 || pelletsAmount<50 || pelletsAmount>90 || monstersAmount<1 || monstersAmount>4)
+                        {
+                            throw new Error("incorrect values");
+                        }
+                }
+                else{
+                    colors = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow", "White","Silver","lime","fuchsia","teal","aqua","aquamarine","azure","bisque"];
+                    monstersAmount = Math.floor(Math.random() * 4) + 1; //settings 1 - 4
+                    pelletsAmount = Math.floor(Math.random() * 50) + 40;//settings 50 - 90
+                    var timeLeft = Math.floor(Math.random() * 60) + 60; //settings 60+ seconds
+                    up = 'ArrowUp'
+                    down = 'ArrowDown'
+                    right = 'ArrowRight'
+                    left = 'ArrowLeft' 
+                    colorBall5 = colors[Math.floor(Math.random()*colors.length)];
+                    colorBall10 = colors[Math.floor(Math.random()*colors.length)];
+                    colorBall25 = colors[Math.floor(Math.random()*colors.length)];
+                    playerName.innerHTML=name
+                }
+                //audioPlaying = false
+                var timerAudio
+                if(audioPlaying==false && restart==false){
+                audio = new Audio('./background_music.mp3');
+                audio.loop=true
+                audio.play()
+                audioPlaying=true
+                }
+                //addEventListener('keydown', playAudio, {once : true});
+                    
+                var timer; 
+                lose=false
+                pelletCheck = 0
+                currentMonstersAmount = 0
+                currentPelletsAmount = 0
+                health=5
+                    
+                function updateTimer() {
+
+                    timeLeft = timeLeft - 1;
+                    if(timeLeft >= 0 && !lose)
+                        timeEL.innerHTML=timeLeft
+                    else {
+                        console.log('lose')
+                        if(scoreEL.innerHTML < 100){
+                        alert("You are better than " + (parseInt(scoreEL.innerHTML)) + " points!")
+                        lose=true
+                        clearInterval(timer);
+                            audio.loop=false
+                            audioPlaying=false
+                            restart=false
+                            while(ghosts.length > 0) {
+                                ghosts.pop();
+                            }
+                            while(pellets.length > 0) {
+                                pellets.pop();
+                            }
+                            clearInterval(timer);
+                            scoreEL.innerHTML=0;
+                            lose=true
+                        }
+                        else{
+                            alert('Winner!!!')
+                            clearInterval(timer);
+                            audio.loop=false
+                            audioPlaying=false
+                            restart=false
+                            while(ghosts.length > 0) {
+                                ghosts.pop();
+                            }
+                            while(pellets.length > 0) {
+                                pellets.pop();
+                            }
+                            clearInterval(timer);
+                            scoreEL.innerHTML=0;
+                            lose=true
+                        }
+
+                    }
+                }
+                timer = setInterval(updateTimer, 1000);
+                updateTimer();
+    
+                randomPositionX = []
+                randomPositionY = []
+                const pellets = []
+                const boundaries = []
+                const ghosts = []
+                const PowerUps = []
+        
+        
+                const keys = {
+                    ArrowUp: {
+                        pressed: false
+                    },
+                    ArrowLeft: {
+                        pressed: false
+                    },
+                    ArrowDown: {
+                        pressed: false
+                    },
+                    ArrowRight: {
+                        pressed: false
+                    },
+                }
+        
+                let lastKey = ''
+                let score = 0
+    
+                const map = [
+                ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
+                ['|', 'm', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'm', '|'],
+                ['|', '.', 'b', '.', 'b', '.', '[', '7', ']', '.', 'b', '.', 'b', '.', '|'],
+                ['|', '.', '.', '.', '.', '.', '.', '_', '.', '.', '.', '.', '.', '.', '|'],
+                ['|', '.', 'b', '.', '[', ']', '.', 'p', '.', '[', ']', '.', 'b', '.', '|'],
+                ['|', '.', '.', '.', '.', '.', '.', '^', '.', '.', '.', '.', '.', '.', '|'],
+                ['|', '.', 'b', '.', 'b', 'h', '[', '+', ']', 'h', 'b', '.', 'b', '.', '|'],
+                ['|', '.', '.', '.', '.', '.', '.', '_', '.', '.', '.', '.', '.', '.', '|'],
+                ['|', '.', 'b', '.', '[', ']', '.', 'p', '.', '[', ']', '.', 'b', '.', '|'],
+                ['|', '.', '.', '.', '.', '.', '.', '^', '.', '.', '.', '.', '.', '.', '|'],
+                ['|', '.', 'b', '.', 'b', '.', '[', '5', ']', '.', 'b', '.', 'b', '.', '|'],
+                ['|', 'm', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', 'm', '|'],
+                ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
+    
+                ]
+        
+                function createImage(src){
+                    const image = new Image()
+                    image.src = src 
+                    return image
+                }
+        
+                map.forEach((row, i) => {
+                    row.forEach((Symbol,j) => {
+                        switch(Symbol) {
+                            case '-':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeHorizontal.png')
+                                })
+                                )
+                                break
+                            case '|':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeVertical.png')
+                                })
+                                )
+                                break
+                            case '1':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeCorner1.png')
+                                })
+                                )
+                                break
+                            case '2':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeCorner2.png')
+                                    })
+                                )
+                                break
+                            case '3':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeCorner3.png')
+                                    })
+                                )
+                                break
+                            case '4':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/pipeCorner4.png')
+                                    })
+                                )
+                                break
+                            case 'b':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: Boundary.width * j,
+                                    y: Boundary.height * i
+                                    },
+                                    image: createImage('./img/block.png')
+                                    })
+                                )
+                                break
+                            case '[':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    image: createImage('./img/capLeft.png')
+                                    })
+                                )
+                                break
+                            case ']':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    image: createImage('./img/capRight.png')
+                                    })
+                                )
+                                break
+                            case '_':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    image: createImage('./img/capBottom.png')
+                                    })
+                                )
+                                break
+                            case '^':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    image: createImage('./img/capTop.png')
+                                    })
+                                )
+                                break
+                            case '+':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    image: createImage('./img/pipeCross.png')
+                                    })
+                                )
+                                break
+                            case '5':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    color: 'blue',
+                                    image: createImage('./img/pipeConnectorTop.png')
+                                    })
+                                )
+                                break
+                            case '6':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    color: 'blue',
+                                    image: createImage('./img/pipeConnectorRight.png')
+                                    })
+                                )
+                                break
+                            case '7':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    color: 'blue',
+                                    image: createImage('./img/pipeConnectorBottom.png')
+                                    })
+                                )
+                                break
+                            case '8':
+                                boundaries.push(
+                                new Boundary({
+                                    position: {
+                                    x: j * Boundary.width,
+                                    y: i * Boundary.height
+                                    },
+                                    //image: createImage('./img/pipeConnectorLeft.png')
+                                    })
+                                )
+                                break
+                            case '.':
+                                pelletCheck+=pelletsAmount/102 //106 max pellets
+                                if(currentPelletsAmount<pelletCheck && currentPelletsAmount < pelletsAmount){
+        
+                                    randomPellet = Math.floor(Math.random() * 10);
+                                    if(randomPellet < 1){
+                                        pellets.push(
+                                        new Pellet({
+                                            position: {
+                                            x: j * Boundary.width + Boundary.width / 2,
+                                            y: i * Boundary.height + Boundary.height / 2
+                                            },
+                                            radius: 5,
+                                            color: colorBall25,
+                                            score: 25,
+                                            //image: createImage('./img/gem_purple.png')
+                                        })
+                                        )
+                                    }
+                                    else if((randomPellet < 5 && randomPellet > 0)){
+                                        pellets.push(
+                                        new Pellet({
+                                            position: {
+                                            x: j * Boundary.width + Boundary.width / 2,
+                                            y: i * Boundary.height + Boundary.height / 2
+                                            },
+                                            radius: 4,
+                                            color: colorBall10,
+                                            score: 15,
+                                            //image: createImage('./img/gem_green.png')
+                                        })
+                                        )
+                                    }
+                                    else{
+        
+                                        pellets.push(
+                                        new Pellet({
+                                            position: {
+                                            x: j * Boundary.width + Boundary.width / 2,
+                                            y: i * Boundary.height + Boundary.height / 2
+                                            },
+                                            color: colorBall5
+                                            //image: createImage('./img/gem_blue.png')
+                                        })
+                                        )        
+                                    }
+                                    
+                                    currentPelletsAmount++
+                                }
+                                randomPositionX.push(j);
+                                randomPositionY.push(i);
+                            
+                                break
+        
+                            case 'm': //monsters
+            
+                                if(monstersAmount > currentMonstersAmount && currentMonstersAmount%2==1)
+                                {
+                                ghosts.push(
+                                new Ghost({
+                                    position: {
+                                    x: j * Boundary.width + Boundary.width/2,
+                                    y: i * Boundary.height + Boundary.height/2
+                                    },
+                                    velocity: {
+                                        x: -Ghost.speed,
+                                        y: 0
+                                    }
+                            
+                                })
+                                )
+                                currentMonstersAmount = currentMonstersAmount + 1
+                                }
+                                else if(monstersAmount > currentMonstersAmount){
+                                ghosts.push(
+                                new Ghost({
+                                    position: {
+                                    x: j * Boundary.width + Boundary.width/2,
+                                    y: i * Boundary.height + Boundary.height/2
+                                    },
+                                    velocity: {
+                                        x: Ghost.speed,
+                                        y: 0
+                                    },
+                                    color: 'blue'
+                                })
+                                )
+                                currentMonstersAmount = currentMonstersAmount + 1
+                                }
+                                break
+        
+                            case 'p':
+                            PowerUps.push(
+                            new PowerUp({
+                                position: {
+                                x: j * Boundary.width + Boundary.width/2,
+                                y: i * Boundary.height + Boundary.height/2
+                                },
+                                image: createImage('./img/timer.png')
+                            })
+                            )
+                            break
+                            case 'h':
+                            PowerUps.push(
+                            new PowerUp({
+                                position: {
+                                x: j * Boundary.width + Boundary.width/2,
+                                y: i * Boundary.height + Boundary.height/2
+                                },
+                                type: 'health',
+                                image: createImage('./img/heart.png')
+                            })
+                            )
+                            break
+                        }
+                    })
+                        
+                })
+        
+                    
+                randomPos=Math.floor(Math.random() * randomPositionX.length) //random pos for ghost friend
+                if(randomPositionX[randomPos]+1==randomPositionX[randomPos+1]){
+                friendSpeedX = 1
+                friendSpeedY = 0
+                }
+                else if(randomPositionX[randomPos-1]==randomPositionX[randomPos]-1){
+                friendSpeedX = -1
+                friendSpeedY = 0
+                }
+                else if(randomPositionY[randomPos]+1==randomPositionY[randomPos+1]){
+                friendSpeedY = 1
+                friendSpeedX = 0
+                }
+                else{
+                friendSpeedY = -1
+                friendSpeedX = 0
+                }
+                ghosts.push(
+                    new Ghost({
+                        position: {
+                        x: randomPositionX[randomPos] * Boundary.width + Boundary.width/2,
+                        y: randomPositionY[randomPos] * Boundary.height + Boundary.height/2
+                        },
+                        velocity: {
+                            x: friendSpeedX,
+                            y: friendSpeedY
+                            },
+                        color: 'pink',
+                        friend: true,
+                        radius: 10
+                    })
+                )
+        
+        
+                randomPos=Math.floor(Math.random() * randomPositionX.length) //random pos for player
+                const player = new Player({
+                    
+                    position:{
+                        
+                        x:Boundary.width*randomPositionX[randomPos] + Boundary.width/2,
+                        y:Boundary.height*randomPositionY[randomPos] + Boundary.height/2
+                },
+                    velocity:{
+                        x:0,
+                        y:0
+                    }
+                })
+        
+                function circleCollideWithRectangle({circle,rectangle}) {
+                    const padding = Boundary.width/2 - circle.radius - 1
+                    return (circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height + padding && 
+                    circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x - padding &&
+                    circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y - padding  &&   
+                    circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width + padding)
+                }
+        
+        
+                function animate() {
+                    animationId = requestAnimationFrame(animate)
+                    c.clearRect(0, 0, canvas.width, canvas.height)
+                    healthEL.innerHTML=health
+    
+                    if (keys.ArrowUp.pressed && lastKey == 'ArrowUp') {
+                        for(let i = 0; i < boundaries.length; i++){
+                            const boundary = boundaries[i]
+                            if(circleCollideWithRectangle({circle: {...player, velocity: { x: 0, y: -player.speed}}, rectangle: boundary})) 
+                            {
+                                player.velocity.y = 0 
+                                break
+                            }   
+                            else
+                            {player.velocity.y = -player.speed}  
+                        } 
+                    
+    
+                    } else if (keys.ArrowLeft.pressed & lastKey == 'ArrowLeft') {
+                        for(let i = 0; i < boundaries.length; i++){
+                            const boundary = boundaries[i]
+                            if(circleCollideWithRectangle({circle: {...player, velocity: { x: -player.speed, y: 0}}, rectangle: boundary})) 
+                            {
+                                player.velocity.x = 0
+                                break
+                            }   
+                            else
+                            {player.velocity.x = -player.speed}  
+                        } 
+                    } else if (keys.ArrowDown.pressed & lastKey == 'ArrowDown') {
+                        for(let i = 0; i < boundaries.length; i++){
+                            const boundary = boundaries[i]
+                            if(circleCollideWithRectangle({circle: {...player, velocity: { x: 0, y: player.speed}}, rectangle: boundary})) 
+                            {
+                                player.velocity.y = 0
+                                break
+                            }   
+                            else
+                            {player.velocity.y = player.speed}  
+                        }
+                    } else if (keys.ArrowRight.pressed & lastKey == 'ArrowRight') {
+                        for(let i = 0; i < boundaries.length; i++){
+                            const boundary = boundaries[i]
+                            if(circleCollideWithRectangle({circle: {...player, velocity: { x: player.speed, y: 0}}, rectangle: boundary})) 
+                            {
+                                player.velocity.x = 0
+                                break
+                            }   
+                            else
+                            {player.velocity.x = player.speed}  
+                        }
+                    }
+    
+                    for(let i = PowerUps.length - 1; 0 <= i; i--){
+                        const PowerUp = PowerUps[i]
+                        PowerUp.draw()
+                        if( Math.hypot(PowerUp.position.x - player.position.x, PowerUp.position.y - player.position.y) < PowerUp.radius + player.radius && PowerUp.type=='time')
+                        {
+                            PowerUps.splice(i,1)
+                            timeLeft+=10
+                            timeEL.innerHTML=timeLeft
+                        }
+                        else if( Math.hypot(PowerUp.position.x - player.position.x, PowerUp.position.y - player.position.y) < PowerUp.radius + player.radius && PowerUp.type=='health')
+                        {
+                            PowerUps.splice(i,1)
+                            health+=1
+                            healthEL.innerHTML=health
+                        }
+    
+                    }
+                    
+                    for(let i = pellets.length - 1; 0 <= i; i--){
+                        const pellet = pellets[i]
+                        pellet.draw()
+    
+                        if( Math.hypot(pellet.position.x - player.position.x, pellet.position.y - player.position.y) < pellet.radius + player.radius)
+                        {
+                                pellets.splice(i,1)
+                                score += pellet.score
+                                scoreEL.innerHTML = score
+                        }
+                    }
+                    
+                    //win
+                    console.log(pellets.length)
+                    if (pellets.length === 0){
+                        console.log('win')
+                        //cancelAnimationFrame(animationId)
+                        // audio.loop=false
+                        // audioPlaying=false
+                        // restart=false
+                        // while(ghosts.length > 0) {
+                        //     ghosts.pop();
+                        // }
+                        // while(pellets.length > 0) {
+                        //     pellets.pop();
+                        // }
+                        // clearInterval(timer);
+                        //scoreEL.innerHTML=0;
+                    }
+
+                    if(restart==true){
+                        audio.loop=false
+                        audioPlaying=false
+                        restart=false
+                        cancelAnimationFrame(animationId)
+                        while(ghosts.length > 0) {
+                            ghosts.pop();
+                        }
+                        while(pellets.length > 0) {
+                            pellets.pop();
+                        }
+                        clearInterval(timer);
+                        scoreEL.innerHTML=0;
+                    }
+                    
+    
+                    boundaries.forEach((boundary) => {
+                        boundary.draw()
+    
+                        if(circleCollideWithRectangle({circle: player, rectangle: boundary}))
+                        {
+                            console.log('collide')
+                            player.velocity.x = 0
+                            player.velocity.y = 0
+                        }
+    
+                    })
+    
+                    player.update()
+    
+    
+    
+                    ghosts.forEach(ghost => {
+                        ghost.update()
+                        
+                        if( Math.hypot(ghost.position.x - player.position.x, ghost.position.y - player.position.y) < ghost.radius + player.radius && ghost.friend==false)
+                        {
+                            if(ghost.color=='red')
+                            {
+                                health-=2
+                            }
+                            else
+                                health-=1
+                            
+                            healthEL.innerHTML=health
+                            if(health<=0){
+                                lose=true
+                                audioPlaying=false
+                                audio.loop=false
+                                alert("Losser!!!")                 
+                                cancelAnimationFrame(animationId)
+
+                            }
+                            score-=10
+                            scoreEL.innerHTML = score
+                            
+                            randomPos=Math.floor(Math.random() * randomPositionX.length) //random pos for player
+    
+                            player.position.x = Boundary.width*randomPositionX[randomPos] + Boundary.width/2,
+                            player.position.y = Boundary.width*randomPositionY[randomPos] + Boundary.width/2
+                        }
+                        else if( Math.hypot(ghost.position.x - player.position.x, ghost.position.y - player.position.y) < ghost.radius + player.radius && ghost.friend==true)
+                        {
+                            ghosts.pop()
+                            score+=50
+                            scoreEL.innerHTML = score
+                        }
+    
+                        const collisions = []
+                        boundaries.forEach(boundary => {
+    
+                            if(!collisions.includes('right') && circleCollideWithRectangle({circle: {...ghost, velocity: { x: ghost.speed, y: 0}}, rectangle: boundary})) 
+                            {
+                                collisions.push('right')
+                                
+                            }
+                            if(!collisions.includes('left') && circleCollideWithRectangle({circle: {...ghost, velocity: { x: -ghost.speed, y: 0}}, rectangle: boundary})) 
+                            {
+                                collisions.push('left')
+                                
+                            }  
+                            if(!collisions.includes('up') && circleCollideWithRectangle({circle: {...ghost, velocity: { x: 0, y: -ghost.speed}}, rectangle: boundary})) 
+                            {
+                                collisions.push('up')
+                                
+                            }  
+                            if(!collisions.includes('down') && circleCollideWithRectangle({circle: {...ghost, velocity: { x: 0, y: ghost.speed}}, rectangle: boundary})) 
+                            {
+                                collisions.push('down')
+                                
+                            }     
+                            
+                        })
+                        if(collisions.length > ghost.prevCollisions.length){
+                        ghost.prevCollisions = collisions
+                        }
+    
+                        if(JSON.stringify(collisions) !== JSON.stringify(ghost.prevCollisions)){
+    
+                            if(ghost.velocity.x > 0) ghost.prevCollisions.push('right')
+                            else if(ghost.velocity.x < 0) ghost.prevCollisions.push('left')
+                            else if(ghost.velocity.y < 0) ghost.prevCollisions.push('up')
+                            else if(ghost.velocity.y > 0) ghost.prevCollisions.push('down')
+    
+                            const pathWays = ghost.prevCollisions.filter(collision => {
+                                return !collisions.includes(collision)
+                            })
+    
+    
+                            const direction = pathWays[Math.floor(Math.random() * pathWays.length)]
+    
+                            switch (direction) {
+                                case 'down':
+                                    ghost.velocity.y = ghost.speed
+                                    ghost.velocity.x = 0
+                                    break
+                                case 'up':
+                                    ghost.velocity.y = -ghost.speed
+                                    ghost.velocity.x = 0
+                                    break
+                                case 'right':
+                                    ghost.velocity.y = 0
+                                    ghost.velocity.x = ghost.speed
+                                    break
+                                case 'left':
+                                    ghost.velocity.y = 0
+                                    ghost.velocity.x = -ghost.speed
+                                    break
+                            }
+    
+                            ghost.prevCollisions = []
+                        }
+    
+    
+                    })
+                if (player.velocity.x > 0) player.rotation = 0
+                else if (player.velocity.x < 0) player.rotation = Math.PI
+                else if (player.velocity.y > 0) player.rotation = Math.PI / 2
+                else if (player.velocity.y < 0) player.rotation = Math.PI * 1.5
+    
+            }
+        
+        
+        
+                animate()
+        
+                addEventListener('keydown', ({key}) =>{
+                    switch (key){
+                        case up:
+                            keys.ArrowUp.pressed = true
+                            lastKey = 'ArrowUp'
+                            break
+                        case left:
+                            keys.ArrowLeft.pressed = true
+                            lastKey = 'ArrowLeft'
+                            break
+                        case down:
+                            keys.ArrowDown.pressed = true
+                            lastKey = 'ArrowDown'
+                            break
+                        case right:
+                            keys.ArrowRight.pressed = true
+                            lastKey = 'ArrowRight'
+                            break
+                    }
+                })
+        
+        
+                    addEventListener('keyup', ({key}) =>{
+                        switch (key){
+                            case 'ArrowUp':
+                                keys.ArrowUp.pressed = false
+                                break
+                            case 'ArrowLeft':
+                                keys.ArrowLeft.pressed = false
+                                break
+                            case 'ArrowDown':
+                                keys.ArrowDown.pressed = false
+                                break
+                            case 'ArrowRight':
+                                keys.ArrowRight.pressed = false
+                                break
+                        }
+                    })
+        
+            }
+                
+                // console.log($("#Ghosts").val());
+                // Ghosts = $("#Ghosts").val();
+                // numOfBalls = $("#numOfBalls").val();
+                // timeVal = $("#timeVal").val();
+                // name = $("#Username").val();
+                // up = $("#Up").val();
+                // down = $("#down").val();
+                // right = $("#right").val();
+                // left  = $("#left").val();
+                // fivePoints = $("#fivePoints").val();
+                // fifteenPoints = $("#fifteenPoints").val();
+                // twentyFivePoints = $("#twentyFivePoints").val();
+
+                // startGame(Ghosts,numOfBalls,timeVal,name='mazal',up,down,right,left,fivePoints,fifteenPoints,twentyFivePoints,random=false);
+                // startGame(4,90,120,"Raz","ArrowUp","ArrowDown","ArrowRight","ArrowLeft",'red','white','red',true)
+                </script>
+            
+        </form>
+
+            
+            
+    </div>
+    <script src="./main.js"></script>
+</body>
